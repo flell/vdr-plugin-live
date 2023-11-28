@@ -49,7 +49,7 @@ function addScraperImageTitle(s, image, pt, title, seasonEpisode, runtime, date,
     s.a += image
     s.a += '\" class=\"thumb'
     s.a += pt
-  } else s.a += 'img/transparent.png\" height=\"16px'
+  } else s.a += 'img/transparent.svg\" height=\"16px'
   if (title.length != 0 || date.length != 0) {
 // scraper data available
     s.a += '\" title=\"'
