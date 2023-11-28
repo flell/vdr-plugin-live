@@ -463,7 +463,7 @@ std::vector<time_t>			times_start;
 </%cpp>
 	       <td> <div class="boxheader"> <div> <div><$ channel_names[channel] $> <# reply.sout() automatically escapes special characters to html entities #>
 %           if (cDevice::PrimaryDevice() && cDevice::PrimaryDevice()->HasDecoder() ) {
-              <& pageelems.ajax_action_href action="switch_channel" tip=(tr("Switch to this channel.")) param=(channel_IDs[channel]) image="zap.png" alt="" &>
+              <& pageelems.ajax_action_href action="switch_channel" tip=(tr("Switch to this channel.")) param=(channel_IDs[channel]) image="zap.svg" alt="" &>
 %           }
             <& pageelems.hls_channel channelId=(channel_IDs[channel]) &>
             <& pageelems.m3u_playlist_channel channelId=(channel_IDs[channel]) &>
@@ -560,10 +560,10 @@ std::vector<time_t>			times_start;
 <%cpp>
                            if (LiveFeatures<features::epgsearch>().Recent() ) {
 </%cpp>
-                          <a href="searchresults.html?searchplain=<$ StringUrlEncode(en.title) $>"><img src="<$ LiveSetup().GetThemedLink("img", "search.png") $>" alt="" <& tooltip.hint text=(tr("Search for repeats.")) &> /></a>
+                          <a href="searchresults.html?searchplain=<$ StringUrlEncode(en.title) $>"><img src="<$ LiveSetup().GetThemedLink("img", "search.svg") $>" alt="" <& tooltip.hint text=(tr("Search for repeats.")) &> /></a>
 <%cpp>
                            } else {
-                             </%cpp><img src="img/transparent.png" width="16" height="16"><%cpp>
+                             </%cpp><img src="img/transparent.svg" width="16" height="16"><%cpp>
                            }
 			if (LiveSetup().GetShowIMDb() ) { </%cpp>
                           <& pageelems.imdb_info_href title=(en.title) &>
