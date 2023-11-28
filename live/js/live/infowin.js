@@ -40,7 +40,7 @@ var InfoWin = new Class({
 		  wm: false, // overide default window manager.
 		  draggable: true,
 		  resizable: true,
-		  buttonimg: 'transparent.png',
+		  buttonimg: 'transparent.svg',
 		  bodyselect: 'div.content',
 		  titleselect: 'div.caption',
 		  classSuffix: '-win',
