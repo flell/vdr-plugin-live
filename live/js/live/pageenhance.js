@@ -22,8 +22,8 @@ var PageEnhance = new Class({
 			},
 		  notifyIdPrefix: 'notify',
 		  notifyStrings: {
-			  successMsg: '<img src="active.png" alt=""> Success!',
-			  errorMsg: '<img src="del.png" alt=""> failed!'
+			  successMsg: '<img src="active.svg" class="icon" alt=""> Success!',
+			  errorMsg: '<img src="del.svg" class="icon" alt=""> failed!'
 		  }
 	  },
 
