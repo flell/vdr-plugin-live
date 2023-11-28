@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<!-- 
+Based on
+https://commons.wikimedia.org/wiki/File:Button_Icon_Green.svg
+by
+https://commons.wikimedia.org/wiki/User:Kalan
+License: https://en.wikipedia.org/wiki/en:Free_Art_License
+-->
+
+<svg
+   width="400"
+   height="400"
+   id="svg2"
+   version="1.1"
+   sodipodi:docname="record_timer.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.3966667"
+     inkscape:cx="150.20862"
+     inkscape:cy="231.78025"
+     inkscape:window-width="2560"
+     inkscape:window-height="1521"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="lg1">
+      <stop
+         id="s1"
+         offset="0"
+         style="stop-color:white;stop-opacity:0;" />
+      <stop
+         id="s2"
+         offset="1"
+         style="stop-color:white" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#lg1"
+       id="lg3"
+       x1="191"
+       y1="156"
+       x2="148"
+       y2="10"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.81884058,0,0,0.81884058,-176.18841,-462.18841)" />
+    <linearGradient
+       id="lg2">
+      <stop
+         style="stop-color:#D5FFD5;stop-opacity:1;"
+         offset="0"
+         id="s3" />
+      <stop
+         style="stop-color:#80FF80;stop-opacity:1;"
+         offset="0.36"
+         id="s4" />
+      <stop
+         style="stop-color:#2AFF2A;stop-opacity:1;"
+         offset="0.79"
+         id="s5" />
+      <stop
+         style="stop-color:#00FF00;stop-opacity:1;"
+         offset="1"
+         id="s6" />
+    </linearGradient>
+    <radialGradient
+       xlink:href="#lg2"
+       id="rg1"
+       cx="-100"
+       cy="-278"
+       fx="-100"
+       fy="-278"
+       r="155"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0002925,0,0,1.3658295,45.005558,133.21382)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(255,539)">
+    <circle
+       style="fill:#b3b3b3;stroke-width:2.13747"
+       id="path1015"
+       cx="-55"
+       cy="-339"
+       r="200" />
+    <path
+       style="fill:url(#rg1);stroke:#00d400;stroke-width:3.15799"
+       id="p1"
+       d="m 66.582506,-339 a 121.58251,121.58251 0 1 1 -243.165016,0 121.58251,121.58251 0 1 1 243.165016,0 z" />
+    <path
+       style="fill:url(#lg3);stroke-width:0.818841"
+       d="M -53.362319,-454 C -115.5942,-454 -166.36232,-404.05072 -168,-341.81884 c 31.93478,28.65942 63.05072,29.47826 78.6087,22.1087 16.376807,-7.36957 29.478257,-31.11595 50.768112,-36.84783 21.289855,-4.91304 32.753623,-4.0942 66.326087,9.82609 C 46.536232,-339.36232 44.07971,-364.74638 58,-367.2029 45.717391,-417.15217 0.681159,-454 -53.362319,-454 Z"
+       id="p2" />
+  </g>
+</svg>

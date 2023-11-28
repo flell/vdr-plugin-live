@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 122.88 122.88"
+   version="1.1"
+   sodipodi:docname="reload.svg"
+   width="122.88"
+   height="122.88"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.8512371"
+     inkscape:cx="59.645506"
+     inkscape:cy="61.439999"
+     inkscape:window-width="2560"
+     inkscape:window-height="1521"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <title
+     id="title2">reload</title>
+  <path
+     d="m 85.660016,26.34 a 43.78,43.78 0 0 0 -22.68,-7 42,42 0 0 0 -24.42,7 49.94,49.94 0 0 0 -7.46,6.09 42.07,42.07 0 0 0 -5.47,54.1 49,49 0 0 0 6.12,7.47 41.83,41.83 0 0 0 18.6,10.9 42.77,42.77 0 0 0 21.77,0.13 47.18,47.18 0 0 0 19.2,-9.62 38,38 0 0 0 11.140004,-16 36.8,36.8 0 0 0 1.64,-6.18 38.36,38.36 0 0 0 0.61,-6.69 8.24,8.24 0 1 1 16.47,0 55.24,55.24 0 0 1 -0.8,9.53 54.77,54.77 0 0 1 -18.37,31.93 63.62,63.62 0 0 1 -25.920004,13.1 59.09,59.09 0 0 1 -30.1,-0.25 58.45,58.45 0 0 1 -26,-15.17 65.94,65.94 0 0 1 -8.1,-9.86 58.56,58.56 0 0 1 7.54,-75 65.68,65.68 0 0 1 9.92,-8.09 58.38,58.38 0 0 1 33.95,-9.85 60.51,60.51 0 0 1 32.5,10.42 l -0.47,-4.11 A 8.26307,8.26307 0 1 1 111.75002,7.32 l 2.64,22.77 v 0 a 8.24,8.24 0 0 1 -6.73,9 l -23.380004,4.22 a 8.2336823,8.2336823 0 1 1 -2.9,-16.21 z"
+     style="fill:#3a80e3"
+     id="path4" />
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>reload</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

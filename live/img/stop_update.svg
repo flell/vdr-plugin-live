@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 122.88 122.88"
+   version="1.1"
+   sodipodi:docname="stop_update.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.8512371"
+     inkscape:cx="61.525451"
+     inkscape:cy="61.439999"
+     inkscape:window-width="2560"
+     inkscape:window-height="1521"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1,.cls-3{fill:#fff;}.cls-1,.cls-2{fill-rule:evenodd;}.cls-2{fill:#d92d27;}</style>
+  </defs>
+  <title
+     id="title6">stop-road-sign</title>
+  <polygon
+     class="cls-1"
+     points="100.64 22.24 84.39 5.99 38.47 6 5.99 38.49 6 84.41 38.49 116.89 84.41 116.88 116.89 84.39 116.88 38.47 100.64 22.24 100.64 22.24"
+     id="polygon8" />
+  <path
+     class="cls-2"
+     d="M82,11.82,96.52,26.35l14.53,14.53V82L96.53,96.52,82,111.05H40.9L26.36,96.53,11.83,82V40.9L26.35,26.36,40.88,11.83H82Zm5.77-11L122,35.1a3,3,0,0,1,.88,2.26V85.64a3,3,0,0,1-.87,2.11L87.78,122a3,3,0,0,1-2.26.88H37.24a3,3,0,0,1-2.11-.87L.89,87.78A3,3,0,0,1,0,85.52V37.24a3,3,0,0,1,.87-2.11L35.1.89A3,3,0,0,1,37.36,0H85.64a3,3,0,0,1,2.11.87Zm12.89,21.37L84.39,6H38.47L6,38.49V84.41l32.49,32.48H84.41l32.48-32.49V38.47L100.64,22.24Z"
+     id="path10" />
+  <metadata
+     id="metadata314">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>stop-road-sign</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     aria-label="X"
+     id="text1614"
+     style="font-size:66.6667px;line-height:1.25">
+    <path
+       d="M 68.97581,60.935442 85.837798,85.740143 H 72.784405 L 61.423722,69.138571 50.160695,85.740143 H 37.042199 L 53.904187,60.935442 37.693241,37.139856 H 50.779185 L 61.423722,52.797417 72.035707,37.139856 h 13.151049 z"
+       style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
+       id="path827" />
+  </g>
+</svg>

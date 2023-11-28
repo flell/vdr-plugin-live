@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 122.88 122.88"
+   style="enable-background:new 0 0 122.88 122.88"
+   xml:space="preserve"
+   sodipodi:docname="help.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs11" /><sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="5.8512371"
+     inkscape:cx="61.525451"
+     inkscape:cy="61.439999"
+     inkscape:window-width="2560"
+     inkscape:window-height="1521"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g6" /><style
+     type="text/css"
+     id="style2"><![CDATA[
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3a80e3;}
+]]></style><g
+     id="g6"><path
+       class="st0"
+       d="m 61.44,0 c 33.93,0 61.44,27.51 61.44,61.44 0,33.93 -27.51,61.44 -61.44,61.44 C 27.51,122.88 0,95.37 0,61.44 0,27.51 27.51,0 61.44,0 Z"
+       id="path4"
+       sodipodi:nodetypes="sssss" /><g
+       aria-label="?"
+       id="text2498"
+       style="font-size:106.667px;line-height:1.25"><path
+         d="m 53.393097,87.794245 h 10.57295 v 13.229205 h -10.57295 z m 10.260449,-7.656274 h -9.947948 v -8.020859 q 0,-5.260433 1.458338,-8.64586 1.458338,-3.385427 6.145852,-7.864608 l 4.687515,-4.635431 q 2.968759,-2.760425 4.270847,-5.20835 1.354171,-2.447924 1.354171,-5.000015 0,-4.635431 -3.437511,-7.500024 -3.385427,-2.864592 -9.010445,-2.864592 -4.114596,0 -8.802111,1.822923 -4.635431,1.822922 -9.68753,5.312516 v -9.791697 q 4.895849,-2.968759 9.895864,-4.427097 5.052099,-1.458338 10.416699,-1.458338 9.583364,0 15.364632,5.052099 5.833351,5.052099 5.833351,13.333375 0,3.958346 -1.875006,7.552107 -1.875005,3.541678 -6.56252,8.020858 l -4.583348,4.479181 q -2.447924,2.447924 -3.489594,3.854179 -0.989586,1.35417 -1.406254,2.656258 -0.312501,1.093753 -0.468752,2.656258 -0.15625,1.562505 -0.15625,4.270847 z"
+         style="-inkscape-font-specification:sans-serif;fill:#ffffff"
+         id="path825" /></g></g></svg>
