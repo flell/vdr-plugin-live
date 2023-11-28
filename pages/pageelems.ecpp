@@ -285,7 +285,7 @@ function existingRecordingString(col_span, bottomrow, id, archiveDescr, imdb_id,
 		if (LiveSetup().GetShowLogo()) {
 </%cpp>
 <a href="<$ LiveSetup().GetStartScreenLink()$>">
-<img src="<$ LiveSetup().GetThemedLink("img", "logo.svg") $>" alt="VDR Live!" class="logo" /></a>
+<img src="<$ LiveSetup().GetThemedLink("img", "logo.png") $>" alt="VDR Live!" class="logo" /></a>
 <%cpp>
 		}
 </%cpp>
