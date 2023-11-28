@@ -192,7 +192,7 @@ var LiveVdrInfo = Ajax.extend({
 			  var img = $('statusReloadBtn');
 			  if (img != null) {
 				  // change image according to state.
-				  img.src = this.reload ? 'img/stop_update.png' : 'img/reload.png';
+				  img.src = this.reload ? 'img/stop_update.svg' : 'img/reload.svg';
 			  }
 		  }
 		  if (this.reload)
