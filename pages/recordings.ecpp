@@ -188,10 +188,10 @@ function RecordingsSt_int(s, level, displayFolder, data) {
     obj = recs[obj_i]
     s.a += '<tr class="recording_item">'
     if (level > 0) s.a += 
-      '<td class="space"> <img src="img/transparent.png" width="' + String(16 * level) + 'px" height="16px" /></td>'
+      '<td class="space"> <img src="img/transparent.svg" width="' + String(16 * level) + 'px" height="16px" /></td>'
     s.a += '<td class="td-hidden-xs"><div class="hidden-xs recording_imgs">'
     if (obj[1].length != 0) {
-      s.a += '<img class=\"icon\" src=\"<$LiveSetup().GetThemedLinkPrefixImg()$>on_dvd.png\" alt=\"on_dvd\" title=\"'
+      s.a += '<img class=\"icon\" src=\"<$LiveSetup().GetThemedLinkPrefixImg()$>on_dvd.svg\" alt=\"on_dvd\" title=\"'
       s.a += obj[1]
       s.a += '/>'
     } else {
@@ -236,16 +236,19 @@ function RecordingsSt_int(s, level, displayFolder, data) {
     s.a += '<td><div class=\"recording_actions\">'
     if (obj[1].length == 0) {
 %     if (cDevice::PrimaryDevice() && cDevice::PrimaryDevice()->HasDecoder() ) {
-        RecordingActionS(s, obj[0], "vdr_request/play_recording?param=", "play.png", "<$tr("play this recording")$>")
+        RecordingActionS(s, obj[0], "vdr_request/play_recording?param=", "play.svg", "<$tr("play this recording")$>")
 %     }
-%     if (LiveSetup().GetShowPlayMediaplayer() ) {
-        RecordingActionS(s, obj[0], "playlist.m3u?recid=", "playlist.png", "<$tr("Stream this recording into media player.")$>")
-%     } if (LiveSetup().GetShowIMDb() ) {
+<%cpp> if (LiveSetup().GetShowPlayMediaplayer() ) { </%cpp>
+        RecordingActionS(s, obj[0], "playlist.m3u?recid=", "playlist.svg", "<$tr("Stream this recording into media player.")$>")
+<%cpp> } if (LiveSetup().GetShowIMDb() ) { </%cpp>
         IMDBS(s, obj[2], obj[14])
-%     }
-      RecordingActionS(s, obj[0], "edit_recording.html?recid=", "edit.png", "<$tr("Edit recording")$>")
-      RecordingActionS(s, obj[0], "epginfo.html?epgid=del_", "del.png", "<$tr("Delete this recording from hard disc!")$>")
-%     if (LiveSetup().GetShowIMDb() ) {
+<%cpp> } </%cpp>
+      RecordingActionS(s, obj[0], "edit_recording.html?recid=", "edit.svg", "<$tr("Edit recording")$>")
+<#    s.a += '<div class=\"hidden-ts\">'  #>
+      RecordingActionS(s, obj[0], "epginfo.html?epgid=del_", "del.svg", "<$tr("Delete this recording from hard disc!")$>")
+<#    RecordingActionS(s, obj[0], "recordings.html?todel=", "del.svg", "<$tr("Delete this recording from hard disc!")$>") #>
+<#    s.a += '</div>'  #>
+<%cpp> if (LiveSetup().GetShowIMDb() ) { </%cpp>
     } else {
       IMDBS(s, obj[2], obj[14])
 %     }
@@ -265,7 +268,7 @@ function RecordingsSt_int(s, level, displayFolder, data) {
 
   <script type="text/javascript" src="js/live/treeview.js"></script>
   <script>
-  const tv = new Treeview("<$ LiveSetup().GetThemedLinkPrefixImg()$>minus.png", "<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.png", "<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_open.png", "<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.png");
+  const tv = new Treeview("<$ LiveSetup().GetThemedLinkPrefixImg()$>minus.svg", "<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.svg", "<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_open.svg", "<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.svg");
   </script>
 </head>
 <body onload="adjustHeader()" onresize="adjustHeader()" onpageshow="clearCheckboxes(document.getElementById('form_recordings'))">
@@ -398,13 +401,13 @@ if (currentFlat != "true") {
         <table><tr>
           <%cpp> if(level > 0) { </%cpp>
             <td class = "space">
-              <img src="img/transparent.png" width="<$ 16*level $>px" height="16px" />
+              <img src="img/transparent.svg" width="<$ 16*level $>px" height="16px" />
             </td>
           <%cpp> } </%cpp>
           <td class="space">
-            <img class="recording_expander" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.png" />
+            <img class="recording_expander" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.svg" />
           </td><td class="space">
-            <img class="recording_folder" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.png" />
+            <img class="recording_folder" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.svg" />
           </td>
 %         if (!recItem->scraperImage().path.empty() ) {
             <td class = space>
@@ -547,9 +550,9 @@ recs[<$cSv(cToSvInt(rPtr->IdI()))$>]=[<$$ recoring_item->c_str() $>]
       <li class="recording">
         <div class="recording_item" onclick = "tv.Toggle(this, 'fldr_<$ idHash $>')">
           <table><tr><td class="space">
-            <img class="recording_expander" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.png" />
+            <img class="recording_expander" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>plus.svg" />
           </td><td class="space">
-            <img class="recording_folder" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.png" />
+            <img class="recording_folder" src="<$ LiveSetup().GetThemedLinkPrefixImg()$>folder_closed.svg" />
           </td><td class="recording_folder_name">
             <$ nodeName $>
           </td></tr></table>
@@ -592,8 +595,8 @@ recs[<$cSv(cToSvInt(rPtr->IdI()))$>]=[<$$ recoring_item->c_str() $>]
 if (currentFlat != "true") {
 </%cpp>
 <span class="sep">|</span>
-<img onclick="ExpandAll()" src="<$ LiveSetup().GetThemedLink("img", "plus.png") $>" alt="" <& tooltip.hint text=(tr("Expand all folders")) &>/>
-<img onclick="CollapseAll()" src="<$ LiveSetup().GetThemedLink("img", "minus.png") $>" alt="" <& tooltip.hint text=(tr("Collapse all folders")) &>/>
+<img onclick="ExpandAll()" src="<$ LiveSetup().GetThemedLink("img", "plus.svg") $>" alt="" <& tooltip.hint text=(tr("Expand all folders")) &>/>
+<img onclick="CollapseAll()" src="<$ LiveSetup().GetThemedLink("img", "minus.svg") $>" alt="" <& tooltip.hint text=(tr("Collapse all folders")) &>/>
 <%cpp>
 }
 </%cpp>
@@ -619,7 +622,7 @@ if (currentSort.compare(0, current.length(), current) == 0) { </%cpp>class="acti
   std::string flat;
   int history_num_back = 0;
 </%args>
-<%cpp> { </%cpp><a href="epginfo.html?epgid=del_<$ id $>&sort=<$sort$>&filter=<$filter$>&flat=<$flat$>&history_num_back=<$history_num_back+1$>" <& tooltip.hint text=(tr("Delete this recording from hard disc!")) &>><img src="<$ LiveSetup().GetThemedLink("img", "del.png") $>" alt="" /></a><%cpp> } </%cpp>
+<%cpp> { </%cpp><a href="epginfo.html?epgid=del_<$ id $>&sort=<$sort$>&filter=<$filter$>&flat=<$flat$>&history_num_back=<$history_num_back+1$>" <& tooltip.hint text=(tr("Delete this recording from hard disc!")) &>><img src="<$ LiveSetup().GetThemedLink("img", "del.svg") $>" alt="" /></a><%cpp> } </%cpp>
 </%def>
 
 <# ---------------------------------------------------------------------- #>
@@ -631,7 +634,7 @@ if (currentSort.compare(0, current.length(), current) == 0) { </%cpp>class="acti
   std::string flat;
   int history_num_back = 0;
 </%args>
-<%cpp> { </%cpp><a href="edit_recording.html?recid=<$ id $>&sort=<$sort$>&filter=<$filter$>&flat=<$flat$>&history_num_back=<$history_num_back+1$>"><img src="<$ LiveSetup().GetThemedLink("img", "edit.png") $>" alt="" <& tooltip.hint text=(tr("Edit recording")) &> /></a><%cpp> } </%cpp>
+<%cpp> { </%cpp><a href="edit_recording.html?recid=<$ id $>&sort=<$sort$>&filter=<$filter$>&flat=<$flat$>&history_num_back=<$history_num_back+1$>"><img src="<$ LiveSetup().GetThemedLink("img", "edit.svg") $>" alt="" <& tooltip.hint text=(tr("Edit recording")) &> /></a><%cpp> } </%cpp>
 </%def>
 
 <# ---------------------------------------------------------------------- #>
@@ -704,7 +707,7 @@ function cancel_delete() {
   int history_num_back = 0;
 </%args>
 %   if (cDevice::PrimaryDevice() && cDevice::PrimaryDevice()->HasDecoder() ) {
-<& pageelems.ajax_action_href action="play_recording" param=(id) tip=(tr("play this recording")) image="play.png" alt="" &>
+<& pageelems.ajax_action_href action="play_recording" param=(id) tip=(tr("play this recording")) image="play.svg" alt="" &>
 %   }
 <& pageelems.m3u_playlist_recording recid=(id) &>
 <& pageelems.imdb_info_href title=(title) s_IMDB_ID=(s_IMDB_ID) &>
@@ -728,7 +731,7 @@ if (recording && recording->Info() ) {
     if (recording->FileName() )
       AppendDuration(duration, tr("%d:%02d"), recording->LengthInSeconds() );
 </%cpp>
-<img data-src="img/transparent.png" height="10px" />
+<img data-src="img/transparent.svg" height="10px" />
 <span id="icons-<$id$>"></span>
 <script class="injectIcons">
 injectErrorHdSdIcon(\"icons-<$id$>\", <$cSv(cToSvInt(recordingErrors))$>, <$cSv(cToSvInt(getScraperVideo.m_scraperVideo->getDurationDeviation()))$>, \"<$sdhd$>\", \"<$cSv(recording->Info()->ChannelName())$>\", \"<$duration$>\", <$ GetNumberOfTsFiles(recording) $>)
@@ -746,7 +749,7 @@ injectErrorHdSdIcon(\"icons-<$id$>\", <$cSv(cToSvInt(recordingErrors))$>, <$cSv(
 	std::string title;
         std::string s_IMDB_ID;
 </%args>
-<img src="<$ LiveSetup().GetThemedLink("img", "on_dvd.png") $>" alt="on_dvd" <& tooltip.hint text=(archived) &> />
+<img src="<$ LiveSetup().GetThemedLink("img", "on_dvd.svg") $>" alt="on_dvd" <& tooltip.hint text=(archived) &> />
 <& pageelems.imdb_info_href title=(title) s_IMDB_ID=(s_IMDB_ID)&>
 </%def>
 
