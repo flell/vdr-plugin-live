@@ -51,9 +51,6 @@ select {
 img {
 	border: 0;
 }
-img.icon {
-	margin: 2px;
-}
 
 a {
 	text-decoration: none;
@@ -658,6 +655,49 @@ button.blue {
 button.yellow {
 	background-image: url(../img/button_yellow.png);
 }
+
+/* #################################
+   # Icons (widths required for SVG)
+   #################################
+*/
+
+img.icon {
+	margin: 2px;
+	width:20px;
+}
+
+table td.leftcol img,
+table td.action img,
+a.action-rightcol img,
+div.action-rightcol img {
+	width: 20px;
+}
+
+div#infobox div.st_controls img {
+        width: 20px;
+}
+
+div.epg_content div.epg_tools img {
+        width: 20px;
+}
+
+div.boxheader img {
+        width: 20px;
+}
+
+img.recording_expander, img.recording_folder  {
+        width: 16px;
+}
+
+table.formular img {
+	width: 16px;
+}
+
+div.about_right {
+        width: 20px;
+}
+
+
 
 
 /* ################################
