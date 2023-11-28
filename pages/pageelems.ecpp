@@ -462,8 +462,8 @@ if (LiveSetup().GetUseStreamdev() && LiveFeatures<features::streamdev_server>().
 					errorMsg: '<$ tr("an error occured!") $>'
 				},
 				notifyStrings: {
-					successMsg: '<img src="<$ LiveSetup().GetThemedLink("img", "active.svg") $>" alt=""> <$ tr("Request succeeded!") $>',
-					errorMsg: '<img src="<$ LiveSetup().GetThemedLink("img", "del.svg") $>" alt=""> <$ tr("Request failed!") $>'
+					successMsg: '<img src="<$ LiveSetup().GetThemedLink("img", "active.svg") $>" class="icon" alt=""> <$ tr("Request succeeded!") $>',
+					errorMsg: '<img src="<$ LiveSetup().GetThemedLink("img", "del.svg") $>" class="icon" alt=""> <$ tr("Request failed!") $>'
 				}
 			});
 	--></script>
