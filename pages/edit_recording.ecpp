@@ -155,7 +155,7 @@ const cRecording* recording;
 	}
 </%cpp>
 							</select>
-              <img id="new_dir_button" class="icon" src="<$ LiveSetup().GetThemedLink("img", "button_new.png") $>" title="<$tr("Create new directory")$>" onclick="new_dir()" style="vertical-align: middle">
+              <img id="new_dir_button" class="icon" src="<$ LiveSetup().GetThemedLink("img", "button_new.svg") $>" title="<$tr("Create new directory")$>" onclick="new_dir()" style="vertical-align: middle">
 							<input type="text" name="newdir" id="newdir" value="." size="55" class="width99" style="display:none" />
 						</td>
 					</tr>
