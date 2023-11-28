@@ -121,7 +121,7 @@ for (var z=0; z<openNodes.length; z++){
       }
     var divRecItem = ul.parentNode.children[0]
     if (divRecItem != null)
-      setImages(divRecItem, "img/minus.png", "img/folder_open.png");
+      setImages(divRecItem, "img/minus.svg", "img/folder_open.svg");
   }
 }
 if (domChanges == 1 && typeof liveEnhanced !== 'undefined') liveEnhanced.domReadySetup();
@@ -160,11 +160,11 @@ async function ExpandAll()
   if (domChanges == 1) imgLoad();
   expandNodes = getElementsByNodeNameClassName(window.document, 'IMG', 'recording_expander');
   for (idx = 0; idx < expandNodes.length; idx++) {
-    expandNodes[idx].src = "img/minus.png";
+    expandNodes[idx].src = "img/minus.svg";
   }
   folderNodes = getElementsByNodeNameClassName(window.document, 'IMG', 'recording_folder');
   for (idx = 0; idx < folderNodes.length; idx++) {
-    folderNodes[idx].src = "img/folder_open.png";
+    folderNodes[idx].src = "img/folder_open.svg";
   }
   createCookie( cookieNameRec, openNodes, 14 );
 }
@@ -178,11 +178,11 @@ function CollapseAll()
   }
   expandNodes = getElementsByNodeNameClassName(window.document, 'IMG', 'recording_expander');
   for (idx = 0; idx < expandNodes.length; idx++) {
-    expandNodes[idx].src = "img/plus.png";
+    expandNodes[idx].src = "img/plus.svg";
   }
   folderNodes = getElementsByNodeNameClassName(window.document, 'IMG', 'recording_folder');
   for (idx = 0; idx < folderNodes.length; idx++) {
-    folderNodes[idx].src = "img/folder_closed.png";
+    folderNodes[idx].src = "img/folder_closed.svg";
   }
   eraseCookie( cookieNameRec );
 }
