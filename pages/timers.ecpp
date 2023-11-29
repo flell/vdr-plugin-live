@@ -175,8 +175,13 @@ using namespace vdrlive;
 					}
           std::string timerFile;
           AppendHtmlEscapedAndCorrectNonUTF8(timerFile, timer->File());
+
+          std::string rowBackground("");
+          if(timerStateHint.empty()) {
+                rowBackground = " class=\"grayed\"";
+            }
 </%cpp>
-				<tr>
+				<tr<$$ rowBackground $>>
 
 				<td class="leftcol <? bottom ? "bottomrow" ?>"><img src="<$ LiveSetup().GetThemedLink("img", timerStateImg) $>" alt="" <%cpp> if (!timerStateHint.empty()) { </%cpp><& tooltip.hint text=(timerStateHint) &> <%cpp> } </%cpp>/></td>
           <td class="<? bottom ? "bottomrow" ?>"><div class="withmargin">
