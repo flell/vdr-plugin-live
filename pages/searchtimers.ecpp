@@ -70,8 +70,13 @@ if (!logged_in && LiveSetup().UseAuth()) return reply.redirect("login.html");
           if (i < 10) *(--timerID) = '0' + i;
           else for (; i; i /= 10) *(--timerID) = '0' + (i%10);
 
+          std::string rowBackground("");
+          if(!timer->UseAsSearchTimer()) {
+                rowBackground = " class=\"grayed\"";
+            }
+
 </%cpp>
-				<tr>
+				<tr<$$ rowBackground $>>
 					<td class="action leftcol <? bottom ? "bottomrow" ?>"><%cpp> if(timer->UseAsSearchTimer()) { </%cpp><img src="<$ LiveSetup().GetThemedLink("img", "arrow.png") $>" alt="" /><%cpp> } </%cpp></td>
 					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><$ timer->Search() $></div></td>
 					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><$ timer->ChannelText() $></div></td>
