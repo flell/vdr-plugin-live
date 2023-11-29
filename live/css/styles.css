@@ -867,6 +867,10 @@ table.listing>tbody>tr>td {
 	background: transparent url(../img/bg_line.png) bottom repeat-x;
 	border-bottom: 1px solid #C0C1DA;
 }
+table.listing>tbody>tr.grayed>td {
+	background: linear-gradient(0deg, #EFEFEF 1px, #E8E8E8 6px) bottom;
+	border-bottom: 1px solid #C0C1DA;
+}
 
 table.listing tbody tr td.action {
 	padding-left: 3px;
