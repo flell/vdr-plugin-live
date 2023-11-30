@@ -678,7 +678,8 @@ div#infobox div.st_controls img {
         width: 20px;
 }
 
-div.epg_content div.epg_tools img {
+div.epg_content div.epg_tools img,
+div.content div.tools img {
         width: 20px;
 }
 
