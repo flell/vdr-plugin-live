@@ -19,6 +19,7 @@
 // To get rid of the swap definition in vdr/tools.h
 #define DISABLE_TEMPLATES_COLLIDING_WITH_STL
 #endif
+#include "xxhash.h"
 #include <vdr/channels.h>
 #include "stringhelpers.h"
 #include "largeString.h"
@@ -69,12 +70,6 @@ template<class T>
 template<class T>
 	void AppendTextTruncateOnWord(T &target, const char *text, int max_len, bool tooltip = false);
 
-  template<typename... Args> std::string Format(const char *format, Args&&... args) {
-    std::string result;
-    stringAppendFormated(result, format, std::forward<Args>(args)...);
-    return result;
-  }
- 
   template<typename T> void AppendDuration(T &target, char const* format, int duration);
 	std::string FormatDuration( char const* format, int duration );
 
@@ -96,13 +91,38 @@ template<class T>
 template<class T>
   void AppendTextMaxLen(T &target, const char *text);
 
-template<typename T> void toHex(char *buf, int chars, T value);
   std::string MD5Hash(std::string const& str);
 	std::string xxHash32(cSv str);
-	std::string xxHash64(cSv str);
-  std::string xxHash128(cSv str);
-  void stringAppend_xxHash128(std::string &target, cSv str);
-  bool compare_xxHash128(cSv str1, cSv str2); // return str1 == xxHash128(str2)
+
+  class cToSvXxHash32: public cToSvHex<8> {
+    public:
+      cToSvXxHash32(XXH32_hash_t value): cToSvHex<8>::cToSvHex(value) {}
+      cToSvXxHash32(cSv str): cToSvHex<8>::cToSvHex(XXH32(str.data(), str.length(), 20)) {}
+      cToSvXxHash32(const cToSvXxHash32&) = delete;
+      cToSvXxHash32 &operator= (const cToSvXxHash32 &) = delete;
+  };
+
+  XXH64_hash_t parse_hex_64(cSv str);
+  class cToSvXxHash64: public cToSvHex<16> {
+    public:
+      cToSvXxHash64(XXH64_hash_t value): cToSvHex<16>::cToSvHex(value) {}
+      cToSvXxHash64(cSv str): cToSvHex<16>::cToSvHex(XXH3_64bits(str.data(), str.length() )) {}
+      cToSvXxHash64(const cToSvXxHash64&) = delete;
+      cToSvXxHash64 &operator= (const cToSvXxHash64 &) = delete;
+  };
+  XXH128_hash_t parse_hex_128(cSv str);
+  class cToSvXxHash128: public cToSvHex<32> {
+    public:
+      cToSvXxHash128(XXH128_hash_t value): cToSvHex<32>::cToSvHex() { setb(value); }
+      cToSvXxHash128(cSv str): cToSvHex<32>::cToSvHex() { setb(XXH3_128bits(str.data(), str.length() )); }
+      cToSvXxHash128(const cToSvXxHash128&) = delete;
+      cToSvXxHash128 &operator= (const cToSvXxHash128 &) = delete;
+    private:
+      void setb(XXH128_hash_t value) {
+        addCharsHex(m_buffer,    16, value.high64);
+        addCharsHex(m_buffer+16, 16, value.low64);
+      }
+  };
 
 	time_t GetTimeT(std::string timestring); // timestring in HH:MM
 	std::string ExpandTimeString(std::string timestring);

@@ -194,9 +194,9 @@ template void AppendDuration<cLargeString>(cLargeString &target, char const* for
 			return input;
 		}
 		truncated = true;
-		cSv result = input.substr_csv(0, maxLen);
+		cSv result = input.substr(0, maxLen);
 		size_t pos = result.find_last_of(" \t,;:.\n?!'\"/\\()[]{}*+-");
-		return result.substr_csv(0, pos);
+		return result.substr(0, pos);
 	}
 
 	std::string StringFormatBreak(cSv input)
@@ -216,10 +216,10 @@ template void AppendDuration<cLargeString>(cLargeString &target, char const* for
 	{
 		size_t pos = str.find_last_not_of(' ');
     if (pos == std::string::npos) return cSv();
-    cSv trailBlankRemoved = str.substr_csv(0, pos);
+    cSv trailBlankRemoved = str.substr(0, pos);
     pos = trailBlankRemoved.find_first_not_of(' ');
     if (pos == std::string::npos) return cSv();
-    return trailBlankRemoved.substr_csv(pos);
+    return trailBlankRemoved.substr(pos);
   }
 
 // Spielfilm Thailand / Deutschland / Großbritannien 2015 (Rak ti Khon Kaen)
@@ -273,55 +273,42 @@ template void AppendTextTruncateOnWord<cLargeString>(cLargeString &target, const
 		return res;
 	}
 
-template<typename T> void toHex(char *buf, int chars, T value) {
-  const char *hex_chars = "0123456789ABCDEF";
-  for (int i = chars-1; i >= 0; i--, value /= 16) {
-    buf[i] = hex_chars[value%16];
-  }
-}
 	std::string xxHash32(cSv str)
 	{
-//  uint32_t result = XXHash32::hash(str.data(), str.length(), 20);
-	  XXH32_hash_t result = XXH32(str.data(), str.length(), 20);
-	  char res[9];
-	  res[8] = 0;
-    toHex(res, 8, result);
-    return res;
+	  char res[8];
+    addCharsHex(res, 8, XXH32(str.data(), str.length(), 20) );
+    return std::string(res, 8);
 	}
 
-	std::string xxHash64(cSv str)
-	{
-	  XXH64_hash_t result = XXH3_64bits(str.data(), str.length());
-	  char res[17];
-	  res[16] = 0;
-    toHex(res, 16, result);
-    return res;
-	}
-  inline void xxHash128_buf(char *buf, cSv str) {
-// sizeof buf must be >= 32. This is not checked!
-	  XXH128_hash_t result = XXH3_128bits(str.data(), str.length());
-    toHex(buf+16, 16, result.low64);
-    toHex(buf   , 16, result.high64);
-	}
-  void stringAppend_xxHash128(std::string &target, cSv str) {
-	  char buf[32];
-    xxHash128_buf(buf, str);
-    target.append(buf, 32);
+  XXH64_hash_t parse_hex_64(cSv str) {
+    if (str.length() != 16) {
+      esyslog("live: ERROR in parse_hex_64, hex = \"%.*s\" is not 16 chars long", (int)str.length(), str.data());
+      return 0;
+    }
+    size_t parsed_chars;
+    XXH64_hash_t result = parse_hex<XXH64_hash_t>(str, &parsed_chars);
+    if (parsed_chars == 16) return result;
+    esyslog("live: ERROR in  parse_hex_64, hex = \"%.*s\" contains invalid characters", (int)str.length(), str.data());
+    return 0;
   }
-	std::string xxHash128(cSv str)
-	{
-	  char buf[32];
-    xxHash128_buf(buf, str);
-    return std::string(buf, 32);
+  XXH128_hash_t parse_hex_128(cSv str) {
+    XXH128_hash_t result;
+    if (str.length() != 32) {
+      esyslog("live: ERROR in parse_hex_128, hex = \"%.*s\" is not 32 chars long", (int)str.length(), str.data());
+      result.low64 = 0;
+      result.high64 = 0;
+      return result;
+    }
+    size_t parsed_chars_h, parsed_chars_l;
+    result.high64 = parse_hex<XXH64_hash_t>(str.substr(0, 16), &parsed_chars_h);
+    result.low64  = parse_hex<XXH64_hash_t>(str.substr(16),    &parsed_chars_l);
+    if (parsed_chars_l == 16 && parsed_chars_h == 16) return result;
+    esyslog("live: ERROR in  parse_hex_128, hex = \"%.*s\" contains invalid characters", (int)str.length(), str.data());
+    result.low64 = 0;
+    result.high64 = 0;
+    return result;
   }
 
-  bool compare_xxHash128(cSv str1, cSv str2) {
-// return str1 == xxHash128(str2)
-    if (str1.length() != 32) return false;
-	  char buf[32];
-    xxHash128_buf(buf, str2);
-    return str1.compare(0, 32, buf, 32) == 0;
-  }
 
 #define HOURS(x) ((x)/100)
 #define MINUTES(x) ((x)%100)
@@ -651,7 +638,7 @@ template<typename T> void toHex(char *buf, int chars, T value) {
       esyslog("live: ERROR, image path %.*s does not start with %s", (int)path.length(), path.data(), LiveSetup().GetTvscraperImageDir().c_str());
       return cSv();
     }
-    return path.substr_csv(tvscraperImageDirLength);
+    return path.substr(tvscraperImageDirLength);
   }
 
   bool ScraperCallService(const char *Id, void *Data) {

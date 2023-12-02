@@ -61,6 +61,7 @@ class Setup
 		std::string const GetTntnetLogLevel() const { return m_tntnetloglevel; }
 		bool GetShowLogo() const { return m_showLogo != 0; }
 		bool GetUseAjax() const { return true; }
+		bool GetUseArchive() const { return false; }
 		bool GetShowInfoBox() const { return m_showInfoBox != 0; }
 		bool GetUseStreamdev() const { return m_useStreamdev != 0; }
 		int GetStreamdevPort() const { return m_streamdevPort; }
@@ -77,6 +78,7 @@ class Setup
 		cPlugin *GetPluginTvscraper() { return m_p_tvscraper; } // tvscraper
 		cPlugin *GetPluginScraper() { return m_p_scraper; } // tvscraper. Or, if not available, scraper2vdr
 		void SetTvscraperImageDir(const std::string &dir);
+		const std::string &GetChanLogoDir() const { return m_chanlogodir; }
 		bool GetShowChannelsWithoutEPG() const { return m_showChannelsWithoutEPG != 0; }
 		int GetMaxTooltipChars() const { return m_maxTooltipChars; }
 
@@ -141,6 +143,7 @@ class Setup
 		std::string m_tvscraperimagedir;
                 cPlugin *m_p_tvscraper;
                 cPlugin *m_p_scraper;
+		std::string m_chanlogodir;
 
 		// setup options
 		int m_lastChannel;
