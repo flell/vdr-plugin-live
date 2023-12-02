@@ -238,18 +238,15 @@ function RecordingsSt_int(s, level, displayFolder, data) {
 %     if (cDevice::PrimaryDevice() && cDevice::PrimaryDevice()->HasDecoder() ) {
         RecordingActionS(s, obj[0], "vdr_request/play_recording?param=", "play.svg", "<$tr("play this recording")$>")
 %     }
-<%cpp> if (LiveSetup().GetShowPlayMediaplayer() ) { </%cpp>
+%     if (LiveSetup().GetShowPlayMediaplayer() ) {
         RecordingActionS(s, obj[0], "playlist.m3u?recid=", "playlist.svg", "<$tr("Stream this recording into media player.")$>")
-<%cpp> } if (LiveSetup().GetShowIMDb() ) { </%cpp>
+%     } if (LiveSetup().GetShowIMDb() ) {
         IMDBS(s, obj[2], obj[14])
-<%cpp> } </%cpp>
+%     }
       RecordingActionS(s, obj[0], "edit_recording.html?recid=", "edit.svg", "<$tr("Edit recording")$>")
-<#    s.a += '<div class=\"hidden-ts\">'  #>
       RecordingActionS(s, obj[0], "epginfo.html?epgid=del_", "del.svg", "<$tr("Delete this recording from hard disc!")$>")
-<#    RecordingActionS(s, obj[0], "recordings.html?todel=", "del.svg", "<$tr("Delete this recording from hard disc!")$>") #>
-<#    s.a += '</div>'  #>
-<%cpp> if (LiveSetup().GetShowIMDb() ) { </%cpp>
-    } else {
+%     if (LiveSetup().GetShowIMDb() ) {
+} else {
       IMDBS(s, obj[2], obj[14])
 %     }
     }
