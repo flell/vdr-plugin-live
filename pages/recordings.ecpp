@@ -666,7 +666,6 @@ if (currentSort.compare(0, current.length(), current) == 0) { </%cpp>class="acti
   <div class="epg_content">
     <form>
       <div class="about_head"><div><div><$ cSv(cToSvFormated(tr("Delete recording \"%s\"?"), recording->Name()?recording->Name():"No recording name available")) $></div></div></div>
-      <div class="about_head"><div><div><$ cSv(cToSvFormated(tr("Delete recording \"%s\"?"), recording->Name()?recording->Name():"No recording name available")) $></div></div></div>
       <input type="hidden" name="epgid" value="<$todel$>" \>
       <input type="hidden" name="delete_rec" value="confirmed" \>
       <input type="hidden" name="history_num_back" value="<$ history_num_back $>" id="history_del_<$ todel $>"\>
