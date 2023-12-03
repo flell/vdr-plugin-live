@@ -246,7 +246,7 @@ function RecordingsSt_int(s, level, displayFolder, data) {
       RecordingActionS(s, obj[0], "edit_recording.html?recid=", "edit.svg", "<$tr("Edit recording")$>")
       RecordingActionS(s, obj[0], "epginfo.html?epgid=del_", "del.svg", "<$tr("Delete this recording from hard disc!")$>")
 %     if (LiveSetup().GetShowIMDb() ) {
-} else {
+    } else {
       IMDBS(s, obj[2], obj[14])
 %     }
     }
@@ -665,6 +665,7 @@ if (currentSort.compare(0, current.length(), current) == 0) { </%cpp>class="acti
   </div>
   <div class="epg_content">
     <form>
+      <div class="about_head"><div><div><$ cSv(cToSvFormated(tr("Delete recording \"%s\"?"), recording->Name()?recording->Name():"No recording name available")) $></div></div></div>
       <div class="about_head"><div><div><$ cSv(cToSvFormated(tr("Delete recording \"%s\"?"), recording->Name()?recording->Name():"No recording name available")) $></div></div></div>
       <input type="hidden" name="epgid" value="<$todel$>" \>
       <input type="hidden" name="delete_rec" value="confirmed" \>
