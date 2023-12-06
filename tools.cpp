@@ -216,7 +216,7 @@ template void AppendDuration<cLargeString>(cLargeString &target, char const* for
 	{
 		size_t pos = str.find_last_not_of(' ');
     if (pos == std::string::npos) return cSv();
-    cSv trailBlankRemoved = str.substr(0, pos);
+    cSv trailBlankRemoved = str.substr(0, pos+1);
     pos = trailBlankRemoved.find_first_not_of(' ');
     if (pos == std::string::npos) return cSv();
     return trailBlankRemoved.substr(pos);
@@ -276,7 +276,7 @@ template void AppendTextTruncateOnWord<cLargeString>(cLargeString &target, const
 	std::string xxHash32(cSv str)
 	{
 	  char res[8];
-    addCharsHex(res, 8, XXH32(str.data(), str.length(), 20) );
+    stringhelpers_internal::addCharsHex(res, 8, XXH32(str.data(), str.length(), 20) );
     return std::string(res, 8);
 	}
 
@@ -341,7 +341,7 @@ template void AppendTextTruncateOnWord<cLargeString>(cLargeString &target, const
 	time_t GetTimeT(std::string timestring) // timestring in HH:MM
 	{
 		timestring = StringReplace(timestring, ":", "");
-		int iTime = lexical_cast<int>( timestring );
+		int iTime = parse_int<int>( timestring );
 		struct tm tm_r;
 		time_t t = time(NULL);
 		tm* tmnow = localtime_r(&t, &tm_r);
@@ -391,9 +391,9 @@ template void AppendTextTruncateOnWord<cLargeString>(cLargeString &target, const
 	{
 		if (datestring.empty())
 			return 0;
-		int year = lexical_cast<int>(datestring.substr(format.find("yyyy"), 4));
-		int month = lexical_cast<int>(datestring.substr(format.find("mm"), 2));
-		int day = lexical_cast<int>(datestring.substr(format.find("dd"), 2));
+		int year = parse_int<int>(datestring.substr(format.find("yyyy"), 4));
+		int month = parse_int<int>(datestring.substr(format.find("mm"), 2));
+		int day = parse_int<int>(datestring.substr(format.find("dd"), 2));
 		struct tm tm_r;
 		tm_r.tm_year = year - 1900;
 		tm_r.tm_mon = month -1;
